@@ -11,13 +11,13 @@ pipeline {
         stage('Environment') {
             steps {
                 bat 'python --version'
-                bat 'robot --version'
+                bat 'where robot'
             }
         }
 
         stage('Run UI Tests') {
             steps {
-                bat 'robot --outputdir results/IHM auto_test/IHM'
+                bat 'robot --outputdir results\\IHM auto_test\\IHM'
             }
         }
     }
