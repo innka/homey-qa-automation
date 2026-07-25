@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on win32)" generated="2026-07-19T12:28:49.203812" rpa="false" schemaversion="5">
+<suite id="s1" name="Demande-Voyageur Non Connecte" source="E:\TestAcademy\QA-test-academi\PFF\auto_test\US-07\demande-voyageur_non_connecte.robot">
+<test id="s1-t1" name="Test Envoyer une demande de réservation en tant que Voyageur non connecté" line="59">
+<kw name="Préparer le test" owner="commun" type="SETUP">
+<kw name="Ouvrir le navigateur et accéder à l'application" owner="commun">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:28:49.929074" level="INFO">Opening browser 'Firefox' to base url 'http://livraison3.testacademy.fr/'.</msg>
+<arg>${URL}</arg>
+<arg>${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-19T12:28:49.928429" elapsed="13.024303"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-07-19T12:29:02.953250" elapsed="0.807684"/>
+</kw>
+<status status="PASS" start="2026-07-19T12:28:49.926617" elapsed="13.834741"/>
+</kw>
+<kw name="Se connecter" owner="commun">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:03.764826" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<arg>${LIEN SE CONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:03.763363" elapsed="0.303190"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-19T12:29:04.067524" elapsed="0.351571"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:04.419478" elapsed="0.023165"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CHAMP MOT DE PASSE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:04.443059" elapsed="0.043644"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:04.487905" level="INFO">Typing text 'robot' into text field 'name=username'.</msg>
+<arg>${CHAMP NOM UTILISATEUR}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:04.487185" elapsed="0.165464"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:04.653583" level="INFO">Typing text 'robot' into text field 'name=password'.</msg>
+<arg>${CHAMP MOT DE PASSE}</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:04.653020" elapsed="0.050251"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:04.704087" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<arg>${BOUTON VALIDER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:04.703618" elapsed="0.329454"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:05.041202" level="INFO">Page title is 'Accueil - Livraison 3'.</msg>
+<arg>${TITRE TABLEAU DE BORD VOYAGEUR}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-07-19T12:29:05.033498" elapsed="0.007959"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${MODAL LOGIN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-07-19T12:29:05.041841" elapsed="0.932870"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BUTTON ACCUEIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-07-19T12:29:05.975146" elapsed="0.345941"/>
+</kw>
+<arg>${UTILISATEUR VALIDE}</arg>
+<arg>${MOT DE PASSE VALIDE}</arg>
+<status status="PASS" start="2026-07-19T12:29:03.762092" elapsed="2.559527"/>
+</kw>
+<kw name="Retoutner sur la page d'accueil" owner="commun">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON ACCUEIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-19T12:29:06.323765" elapsed="0.198518"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:06.523198" level="INFO">Clicking element 'xpath=//li[@id='menu-item-4630']/a'.</msg>
+<arg>${BUTTON ACCUEIL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:06.522676" elapsed="1.218346"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${TITRE ACCUEIL}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-07-19T12:29:07.741396" elapsed="0.034605"/>
+</kw>
+<status status="PASS" start="2026-07-19T12:29:06.322418" elapsed="1.453806"/>
+</kw>
+<kw name="Trouver l'annonce" owner="commun">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:07.778142" level="INFO">Clicking element 'css=.search-button &gt; .btn-primary:nth-child(1)'.</msg>
+<arg>${BUTTON CHERCHER ANNONCE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:07.777551" elapsed="1.781556"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:09.560328" level="INFO">Clicking element 'xpath=//span[contains(.,'Destination')]'.</msg>
+<arg>${BAR DESTINATION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:09.559527" elapsed="0.362467"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:09.923105" level="INFO">Typing text 'Miami' into text field 'css=.open &gt; .dropdown-menu .form-control'.</msg>
+<arg>${TEXT CHAMP DESTINATION}</arg>
+<arg>${destination}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-19T12:29:09.922443" elapsed="0.211309"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-07-19T12:29:11.135180" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-07-19T12:29:10.134141" elapsed="1.001819"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-19T12:29:11.137846" level="INFO">Clicking element 'xpath=(//button[@type='button'])[12]'.</msg>
+<msg time="2026-07-19T12:29:11.649859" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: Tried to run command without establishing a connection; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+</msg>
+<msg time="2026-07-19T12:29:11.651155" level="FAIL">InvalidSessionIdException: Message: WebDriver session does not exist, or is not active; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:169:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:439:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:581:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:38:4
+dispatch@chrome://remote/content/marionette/server.sys.mjs:311:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<arg>${BUTTON CHERCHER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-07-19T12:29:11.136458" elapsed="0.780046">InvalidSessionIdException: Message: WebDriver session does not exist, or is not active; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:169:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:439:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:581:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:38:4
+dispatch@chrome://remote/content/marionette/server.sys.mjs:311:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-07-19T12:29:11.916907" elapsed="0.000081"/>
+</kw>
+<arg>${DESTINATION}</arg>
+<status status="FAIL" start="2026-07-19T12:29:07.776607" elapsed="4.140675">InvalidSessionIdException: Message: WebDriver session does not exist, or is not active; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:169:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:439:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:581:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:38:4
+dispatch@chrome://remote/content/marionette/server.sys.mjs:311:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</kw>
+<kw name="Ouvrir l'annonce" owner="commun">
+<status status="NOT RUN" start="2026-07-19T12:29:11.917688" elapsed="0.000077"/>
+</kw>
+<status status="FAIL" start="2026-07-19T12:28:49.925802" elapsed="21.992185">InvalidSessionIdException: Message: WebDriver session does not exist, or is not active; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:169:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:439:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:581:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:38:4
+dispatch@chrome://remote/content/marionette/server.sys.mjs:311:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</kw>
+<kw name="Fermer l'application" owner="commun" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-07-19T12:29:11.920203" elapsed="2.094544"/>
+</kw>
+<status status="PASS" start="2026-07-19T12:29:11.919493" elapsed="2.095646"/>
+</kw>
+<doc>Vérifier qu'un Voyageur non connecté ne peut pas envoyer une demande de réservation pour une annonce.</doc>
+<tag>US-07</tag>
+<status status="FAIL" start="2026-07-19T12:28:49.923380" elapsed="24.092365">Setup failed:
+InvalidSessionIdException: Message: WebDriver session does not exist, or is not active; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:169:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:439:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:581:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:38:4
+dispatch@chrome://remote/content/marionette/server.sys.mjs:311:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</test>
+<status status="FAIL" start="2026-07-19T12:28:49.209022" elapsed="24.809656"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">US-07</stat>
+</tag>
+<suite>
+<stat name="Demande-Voyageur Non Connecte" id="s1" pass="0" fail="1" skip="0">Demande-Voyageur Non Connecte</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-07-19T12:29:11.649859" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: Tried to run command without establishing a connection; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+</msg>
+</errors>
+</robot>
