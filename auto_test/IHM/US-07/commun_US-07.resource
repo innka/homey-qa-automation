@@ -44,12 +44,12 @@ ${BUTTON CHERCHER ANNONCE}         css=.search-button > .btn-primary:nth-child(1
 # ------------------------------------------
 # CHERCHER UNE ANNONCE
 # ------------------------------------------
-${DESTINATION}                     Miami
-${BAR DESTINATION}                 xpath=//span[contains(.,'Destination')]
-${TEXT CHAMP DESTINATION}          css=.open > .dropdown-menu .form-control
-${BUTTON CHERCHER}                 xpath=(//button[@type='button'])[12]
-${ANNONCE}                         css=#homey_halfmap_listings_container > .item-wrap:nth-child(1) .item-title-head a
-
+${DESTINATION}     Miami 
+${BAR DESTINATION}     xpath=//span[contains(.,'Destination')] 
+${TEXT CHAMP DESTINATION}     css=.open > .dropdown-menu .form-control 
+${BUTTON CHERCHER}     xpath=(//button[@type='button'])[12] 
+   
+${ANNONCE}     xpath=(//div[contains(@class,'half-map-left-wrap')]//a[contains(@href,'/listing/hub-haymarket/')])
 # ------------------------------------------
 # RÉSERVATION
 # ------------------------------------------
@@ -117,18 +117,19 @@ Préparer le test
 # ------------------------------------------
 # ACTIONS AVEC ANNONCE
 # ------------------------------------------
-Trouver l'annonce
-    [Arguments]    ${destination}
-
-    # Rechercher une annonce par destination
-    Wait Until Element Is Visible    ${BUTTON CHERCHER ANNONCE}
-    Click Element    ${BUTTON CHERCHER ANNONCE}
-    Click Element    ${BAR DESTINATION}
-    Input Text    ${TEXT CHAMP DESTINATION}    ${destination}
-    Sleep    1s
-    Click Element    ${BUTTON CHERCHER}
-    Sleep    1s
-
+Trouver l'annonce 
+    [Arguments]     ${destination} 
+    # Rechercher une annonce par destination 
+    Wait Until Element Is Visible     ${BUTTON CHERCHER ANNONCE} 
+    Run Keyword And Ignore Error
+    ...    Wait Until Element Is Not Visible    id=homey-map-loading    20s
+    Click Element     ${BUTTON CHERCHER ANNONCE} 
+    Click Element     ${BAR DESTINATION} 
+    Input Text     ${TEXT CHAMP DESTINATION}     ${destination} 
+    Sleep     1s 
+    Click Element     ${BUTTON CHERCHER} 
+    Sleep     1s
+   
 Ouvrir l'annonce
     Click Element    ${ANNONCE}
     Sleep    1s

@@ -47,30 +47,52 @@ Vérifier le message pour les dates déjà réservées
 
     # Recharger la page pour simuler une nouvelle réservation
     Reload Page
+    Wait Until Element Is Visible    ${CHAMP DATE DEBUT}    10s
 
+    # Convertir les dates réservées en timestamps
     ${timestamp_debut}    ${timestamp_fin}=
     ...    Convertir les dates réservées en timestamps
     ...    ${date_debut_reserve}
     ...    ${date_fin_reserve}
 
+    # Ouvrir le calendrier
     Click Element    ${CHAMP DATE DEBUT}
     Wait Until Element Is Visible    ${CALENDRIER}    10s
 
+    # Localiser les dates uniquement dans le mois visible
+    ${date_debut_locator}=    Set Variable
+    ...    xpath=//div[@id='single-booking-search-calendar']//div[contains(@class,'single-listing-calendar-wrap') and not(contains(@style,'display: none'))]//li[@data-timestamp='${timestamp_debut}']
+
+    ${date_fin_locator}=    Set Variable
+    ...    xpath=//div[@id='single-booking-search-calendar']//div[contains(@class,'single-listing-calendar-wrap') and not(contains(@style,'display: none'))]//li[@data-timestamp='${timestamp_fin}']
+
+    # Vérifier si les dates sont affichées dans le mois actuel
+    ${date_visible}=    Run Keyword And Return Status
+    ...    Element Should Be Visible    ${date_debut_locator}
+
+    # Passer au mois suivant si nécessaire
+    IF    not ${date_visible}
+        Click Button    ${BUTTON NEXT MONTH}
+        Wait Until Element Is Visible    ${date_debut_locator}    10s
+    END
+
     # Sélectionner les mêmes dates déjà réservées
-    Click Element
-    ...    xpath=//div[@id='single-booking-search-calendar']//li[@data-timestamp='${timestamp_debut}']
+    Wait Until Element Is Visible    ${date_debut_locator}    10s
+    Click Element    ${date_debut_locator}
 
-    Click Element
-    ...    xpath=//div[@id='single-booking-search-calendar']//li[@data-timestamp='${timestamp_fin}']
+    Wait Until Element Is Visible    ${date_fin_locator}    10s
+    Click Element    ${date_fin_locator}
 
+    # Choisir le nombre de voyageurs
     Choisir le nombre de voyageurs
 
+    # Envoyer une nouvelle demande avec les mêmes dates
     Click Button    ${BUTTON DEMANDE RESERVATION}
 
     # Vérifier le message d'indisponibilité
     Wait Until Element Is Visible    ${ERREUR DATES}    10s
     Element Should Contain    ${ERREUR DATES}    ${MESSAGE DATES INDISPONIBLES}
-
+    
 Vérifier que les dates réservées ne sont plus sélectionnables
     [Arguments]    ${date_debut_reserve}    ${date_fin_reserve}
 
