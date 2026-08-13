@@ -6,7 +6,7 @@
 ![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-End-to-end QA project covering requirements analysis, manual testing, Robot Framework UI automation, Jira/Xray test management, defect reporting
+End-to-end QA project covering requirements analysis, manual testing, Robot Framework UI automation, Jira/Xray test management, defect reporting.
 
 ## Overview
 
@@ -26,7 +26,7 @@ The project demonstrates the complete software testing lifecycle, from requireme
 
 ### Robot Framework Report
 
-![1784985534777](image/README/1784985534777.png)
+![1786650043818](image/README/1786650043818.png)
 
 ![1784985551541](image/README/1784985551541.png)
 
@@ -79,7 +79,7 @@ The following QA activities were completed:
 - **2 User Stories**
 - **30 Manual Test Cases**
 - **13 Automated UI Tests**
-- **2 Critical Defects Reported**
+- **1 Critical Defects Reported**
 
 ---
 
@@ -128,7 +128,6 @@ The following QA activities were completed:
     ├── execution/
     │   └── Execution_Report.xlsx
     └── bugs/
-        ├── PP-21...
         └── PP-46...
 ```
 
@@ -166,9 +165,8 @@ The automated test suite covers the following business scenarios:
 
 ## Defects Found
 
-During testing, two major business defects were identified:
+During testing, one major business defects were identified:
 
-- **PP-21** – Reserved dates become selectable again after page refresh.
 - **PP-46** – A traveler can mark a reservation as paid even when the host has not configured banking information.
 
 Both defects were documented and reported.
@@ -204,4 +202,5 @@ Junior QA Automation Engineer
 - SeleniumLibrary
 - Python
 - Jira / Xray
+- Jenkins
 - Git & GitHub
