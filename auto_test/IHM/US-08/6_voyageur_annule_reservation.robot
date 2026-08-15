@@ -8,13 +8,14 @@ Resource        commun_US-08.resource
 Test Teardown   Fermer l'application8
 
 *** Variables ***
-${STATUT RESERVATION AVANT ANNULATION}    DISPONIBLE
-${STATUT RESERVATION APRES ANNULATION}    ANNULÉ
-${RAISON ANNULATION}                      Je ne peux plus venir
+${STATUT RESERVATION AVANT ANNULATION DISPO}        DISPONIBLE
+${STATUT RESERVATION AVANT ANNULATION À L'ÉTUDE}    À L'ÉTUDE
+${STATUT RESERVATION APRES ANNULATION}              ANNULÉ
+${RAISON ANNULATION}                                Je ne peux plus venir
 
-${USER MENU}                              css=.account-loggedin
-${BUTTON VOYAGES}                         xpath=//div[contains(@class,'account-dropdown')]//a[contains(normalize-space(.),'Voyages')]
-${BUTTON ANNULER}                         xpath=(//button[@id='cancel-reservation-btn'])[2]
+${USER MENU}                                        css=.account-loggedin
+${BUTTON VOYAGES}                                   xpath=//div[contains(@class,'account-dropdown')]//a[contains(normalize-space(.),'Voyages')]
+${BUTTON ANNULER}                                   xpath=(//button[@id='cancel-reservation-btn'])[2]
 
 *** Keywords ***
 Se connecter comme voyageur
@@ -51,7 +52,14 @@ Tester annuler une réservation et vérifier le statut ANNULÉ des deux côtés
     # PP-36 : Annuler une réservation
     Se connecter comme voyageur
     Aller dans Voyages
-    Ouvrir une réservation avec le statut    ${STATUT RESERVATION AVANT ANNULATION}
+    
+    ${reservation_trouvee}=    Run Keyword And Return Status    Ouvrir une réservation avec le statut    ${STATUT RESERVATION AVANT ANNULATION DISPO}
+
+    IF    not ${reservation_trouvee}
+        Log    Aucune réservation DISPONIBLE trouvée. Recherche d'une réservation À L'ÉTUDE.
+        Ouvrir une réservation avec le statut    ${STATUT RESERVATION AVANT ANNULATION À L'ÉTUDE}
+
+    END
 
     # Mémoriser l'ID pour les vérifications suivantes
     ${reservation_id}=    Récupérer l'ID de la réservation
