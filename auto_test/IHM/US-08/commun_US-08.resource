@@ -194,6 +194,7 @@ Verifier l'info bancaires
     Log    Succès l'info bancaires
 
 Marquer comme payé
+    Wait Until Element Is Visible    ${BUTTON MARQUER COMME PAYE}    10s
     Click Element    ${BUTTON MARQUER COMME PAYE}
 
     # Confirmer l'action
@@ -201,8 +202,14 @@ Marquer comme payé
     ...    xpath=//div[contains(@class,'bootbox') and contains(@class,'in')]//button[@data-bb-handler='confirm']    10s
 
     Click Element    xpath=//div[contains(@class,'bootbox') and contains(@class,'in')]//button[@data-bb-handler='confirm']
-
+    Wait Until Element Is Not Visible    xpath=//div[contains(@class,'bootbox') and contains(@class,'in')]//button[@data-bb-handler='confirm']    10s
     # Vérifier le statut
     Wait Until Element Is Visible    
     ...    xpath=//aside[contains(@class,'dashboard-sidebar')]//span[contains(@class,'btn-success-outlined')]    10s
     Log    La réservation a été marquée comme payée avec succès. Statut : RÉSERVÉ
+
+
+Attendre le statut d'une réservation
+    [Arguments]    ${reservation_id}    ${statut_attendu}
+
+    Wait Until Keyword Succeeds    30s    2s    Vérifier le statut d'une réservation    ${reservation_id}    ${statut_attendu}

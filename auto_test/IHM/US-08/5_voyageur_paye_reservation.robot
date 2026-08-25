@@ -36,7 +36,7 @@ Tester le bouton « Payer maintenant » et le paiement d'une réservation
 
     # PP-35 : Marquer la réservation comme payée
     Click Element    xpath=//a[contains(text(),'Retour')]
-    Run Keyword And Continue On Failure    Marquer comme payé
+    Marquer comme payé
 
     # Mémoriser l'ID pour les vérifications suivantes
     ${reservation_id}=    Récupérer l'ID de la réservation
@@ -45,6 +45,7 @@ Tester le bouton « Payer maintenant » et le paiement d'une réservation
 
     # PP-44 : Vérifier le statut côté voyageur
     Retourner au tableau réservations Voyageur
+    Attendre le statut d'une réservation    ${reservation_id}    ${STATUT RESERVATION APRES PAIEMENT}
     Run Keyword And Continue On Failure    
     ...    Vérifier le statut d'une réservation    ${reservation_id}    ${STATUT RESERVATION APRES PAIEMENT}
     Log    ===== Fin de la vérification PP-44 =====
