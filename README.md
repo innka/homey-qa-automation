@@ -163,13 +163,13 @@ The automated test suite covers the following business scenarios:
 
 ---
 
-## Defects Found
+## Defect Found
 
 During testing, one major business defects were identified:
 
 - **PP-46** – A traveler can mark a reservation as paid even when the host has not configured banking information.
 
-Both defects were documented and reported.
+Defect was documented and reported.
 
 ---
 
