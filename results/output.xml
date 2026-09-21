@@ -1,611 +1,808 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on win32)" generated="2026-08-15T14:53:17.473524" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.7 on win32)" generated="2026-08-25T21:41:08.261179" rpa="false" schemaversion="5">
 <suite id="s1" name="PFF" source="E:\TestAcademy\QA-test-academi\PFF">
 <suite id="s1-s1" name="Auto Test" source="E:\TestAcademy\QA-test-academi\PFF\auto_test">
 <suite id="s1-s1-s1" name="IHM" source="E:\TestAcademy\QA-test-academi\PFF\auto_test\IHM">
 <suite id="s1-s1-s1-s1" name="US-08" source="E:\TestAcademy\QA-test-academi\PFF\auto_test\IHM\US-08">
-<suite id="s1-s1-s1-s1-s1" name="6 Voyageur Annule Reservation" source="E:\TestAcademy\QA-test-academi\PFF\auto_test\IHM\US-08\6_voyageur_annule_reservation.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="Tester annuler une réservation et vérifier le statut ANNULÉ des deux côtés" line="48">
-<kw name="Se connecter comme voyageur">
+<suite id="s1-s1-s1-s1-s1" name="5 Voyageur Paye Reservation" source="E:\TestAcademy\QA-test-academi\PFF\auto_test\IHM\US-08\5_voyageur_paye_reservation.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Tester le bouton « Payer maintenant » et le paiement d'une réservation" line="22">
 <kw name="Ouvrir le navigateur et accéder à l'application" owner="commun_US-07">
 <kw name="Fermer les navigateurs restants" owner="commun_US-07">
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-08-15T14:53:17.790127" elapsed="0.000380"/>
+<status status="PASS" start="2026-08-25T21:41:08.712278" elapsed="0.000252"/>
 </kw>
 <arg>Close All Browsers</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-08-15T14:53:17.789404" elapsed="0.001288"/>
+<status status="PASS" start="2026-08-25T21:41:08.711604" elapsed="0.001082"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:17.788605" elapsed="0.002236"/>
+<status status="PASS" start="2026-08-25T21:41:08.710542" elapsed="0.002270"/>
 </kw>
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Ouvrir App" owner="commun_US-07">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:17.792805" level="INFO">Opening browser 'Firefox' to base url 'http://livraison3.testacademy.fr/'.</msg>
+<msg time="2026-08-25T21:41:08.714329" level="INFO">Opening browser 'Firefox' to base url 'http://livraison3.testacademy.fr/'.</msg>
 <arg>${URL}</arg>
 <arg>${NAVIGATEUR}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-08-15T14:53:17.792438" elapsed="7.559133"/>
+<status status="PASS" start="2026-08-25T21:41:08.714045" elapsed="11.472714"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-08-15T14:53:25.351839" elapsed="0.278645"/>
+<status status="PASS" start="2026-08-25T21:41:20.187062" elapsed="0.352311"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:17.791922" elapsed="7.838800"/>
+<status status="PASS" start="2026-08-25T21:41:08.713649" elapsed="11.826070"/>
 </kw>
 <arg>2x</arg>
 <arg>3s</arg>
 <arg>Ouvrir App</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-08-15T14:53:17.791000" elapsed="7.839818"/>
+<status status="PASS" start="2026-08-25T21:41:08.712965" elapsed="11.826963"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>tag=body</arg>
 <arg>15s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-08-15T14:53:25.631080" elapsed="0.015767"/>
+<status status="PASS" start="2026-08-25T21:41:20.540184" elapsed="0.024364"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:17.788001" elapsed="7.859103"/>
+<status status="PASS" start="2026-08-25T21:41:08.709256" elapsed="11.855919"/>
 </kw>
 <kw name="Se connecter" owner="commun_US-07">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:25.648293" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<msg time="2026-08-25T21:41:20.570646" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
 <arg>${LIEN SE CONNECTER}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:25.648002" elapsed="0.098041"/>
+<status status="PASS" start="2026-08-25T21:41:20.569804" elapsed="0.144676"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CHAMP NOM UTILISATEUR}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:25.746507" elapsed="0.232438"/>
+<status status="PASS" start="2026-08-25T21:41:20.714904" elapsed="0.257560"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${CHAMP NOM UTILISATEUR}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:25.979255" elapsed="0.008426"/>
+<status status="PASS" start="2026-08-25T21:41:20.972905" elapsed="0.010043"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${CHAMP MOT DE PASSE}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:25.988052" elapsed="0.011805"/>
+<status status="PASS" start="2026-08-25T21:41:20.983407" elapsed="0.013311"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:26.001123" level="INFO">Typing text 'robot' into text field 'name=username'.</msg>
+<msg time="2026-08-25T21:41:20.997631" level="INFO">Typing text 'robot' into text field 'name=username'.</msg>
 <arg>${CHAMP NOM UTILISATEUR}</arg>
 <arg>${user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:26.000302" elapsed="0.028113"/>
+<status status="PASS" start="2026-08-25T21:41:20.997048" elapsed="0.041822"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:26.029170" level="INFO">Typing text 'robot' into text field 'name=password'.</msg>
+<msg time="2026-08-25T21:41:21.040447" level="INFO">Typing text 'robot' into text field 'name=password'.</msg>
 <arg>${CHAMP MOT DE PASSE}</arg>
 <arg>${pass}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:26.028685" elapsed="0.017455"/>
+<status status="PASS" start="2026-08-25T21:41:21.039500" elapsed="0.030005"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:26.047191" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<msg time="2026-08-25T21:41:21.071028" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
 <arg>${BOUTON VALIDER}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:26.046572" elapsed="0.077135"/>
+<status status="PASS" start="2026-08-25T21:41:21.070073" elapsed="0.097991"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:26.126060" level="INFO">Page title is 'Accueil - Livraison 3'.</msg>
+<msg time="2026-08-25T21:41:21.174057" level="INFO">Page title is 'Accueil - Livraison 3'.</msg>
 <arg>${TITRE TABLEAU DE BORD VOYAGEUR}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-08-15T14:53:26.123965" elapsed="0.002379"/>
+<status status="PASS" start="2026-08-25T21:41:21.168372" elapsed="0.006179"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>${MODAL LOGIN}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:26.126548" elapsed="0.846719"/>
+<status status="PASS" start="2026-08-25T21:41:21.174851" elapsed="1.099145"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${BUTTON ACCUEIL}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-08-15T14:53:26.973489" elapsed="0.254423"/>
+<status status="PASS" start="2026-08-25T21:41:22.274587" elapsed="0.009669"/>
 </kw>
 <arg>${UTILISATEUR VALIDE}</arg>
 <arg>${MOT DE PASSE VALIDE}</arg>
-<status status="PASS" start="2026-08-15T14:53:25.647425" elapsed="1.580669"/>
+<status status="PASS" start="2026-08-25T21:41:20.568355" elapsed="1.716359"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:17.786839" elapsed="9.441350"/>
-</kw>
-<kw name="Aller dans Voyages">
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:27.229923" level="INFO">Sending key(s) ('HOME',) to page.</msg>
-<msg time="2026-08-15T14:53:27.230395" level="INFO">Pressing special key HOME to browser.</msg>
-<msg time="2026-08-15T14:53:27.230763" level="INFO">Releasing special key HOME.</msg>
-<arg>NONE</arg>
-<arg>HOME</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-08-15T14:53:27.229152" elapsed="0.046542"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${USER MENU}</arg>
-<arg>15s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:27.275932" elapsed="0.009651"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:27.286164" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/reservations/'</msg>
-<arg>${URL}index.php/reservations/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-08-15T14:53:27.285897" elapsed="0.980130"/>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=//tbody/tr</arg>
-<arg>15s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-08-15T14:53:28.266305" elapsed="0.017094"/>
-</kw>
-<status status="PASS" start="2026-08-15T14:53:27.228562" elapsed="1.055020"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Verifier l'info de l'annonce avant payer">
 <kw name="Ouvrir une réservation avec le statut" owner="commun_US-08">
 <kw name="Trouver une réservation avec le statut" owner="commun_US-08">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-08-15T14:53:28.286323" level="INFO">${reservation} = xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]</msg>
+<msg time="2026-08-25T21:41:22.292914" level="INFO">${reservation} = xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]</msg>
 <var>${reservation}</var>
 <arg>xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="${statut}"]])[1]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-08-15T14:53:28.285865" elapsed="0.000720"/>
+<status status="PASS" start="2026-08-25T21:41:22.291657" elapsed="0.001988"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:38.324682" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-08-15T14:53:38.325135" level="FAIL">Element 'xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]' not visible after 10 seconds.</msg>
 <arg>${reservation}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-08-15T14:53:28.286816" elapsed="10.062736">Element 'xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]' not visible after 10 seconds.</status>
+<status status="PASS" start="2026-08-25T21:41:22.294042" elapsed="0.051172"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-08-25T21:41:22.347128" level="INFO">La réservation avec le statut DISPONIBLE a été trouvée : xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]</msg>
 <arg>La réservation avec le statut ${statut} a été trouvée : ${reservation}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.349794" elapsed="0.000134"/>
+<status status="PASS" start="2026-08-25T21:41:22.345788" elapsed="0.003595"/>
 </kw>
 <return>
 <value>${reservation}</value>
-<status status="NOT RUN" start="2026-08-15T14:53:38.350013" elapsed="0.000077"/>
+<status status="PASS" start="2026-08-25T21:41:22.350565" elapsed="0.000477"/>
 </return>
+<msg time="2026-08-25T21:41:22.351733" level="INFO">${reservation} = xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]</msg>
 <var>${reservation}</var>
 <arg>${statut}</arg>
-<status status="FAIL" start="2026-08-15T14:53:28.285357" elapsed="10.064859">Element 'xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]' not visible after 10 seconds.</status>
+<status status="PASS" start="2026-08-25T21:41:22.289823" elapsed="0.062249"/>
 </kw>
 <if>
 <branch type="IF" condition="$statut == 'NOUVEAU'">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${reservation}//a[normalize-space(.)='Confirmer']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.350523" elapsed="0.000086"/>
+<status status="NOT RUN" start="2026-08-25T21:41:22.354421" elapsed="0.000532"/>
 </kw>
-<status status="NOT RUN" start="2026-08-15T14:53:38.350377" elapsed="0.000306"/>
+<status status="NOT RUN" start="2026-08-25T21:41:22.352795" elapsed="0.002558"/>
 </branch>
 <branch type="ELSE IF" condition="$statut == 'DISPONIBLE'">
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:22.359077" level="INFO">Clicking element 'xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]//a[contains(text(),'Payez maintenant')]'.</msg>
 <arg>${reservation}//a[contains(text(),'Payez maintenant')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.350856" elapsed="0.000080"/>
+<status status="PASS" start="2026-08-25T21:41:22.357185" elapsed="1.216328"/>
 </kw>
-<status status="NOT RUN" start="2026-08-15T14:53:38.350737" elapsed="0.000266"/>
+<status status="PASS" start="2026-08-25T21:41:22.355556" elapsed="1.218266"/>
 </branch>
 <branch type="ELSE IF" condition="$statut == 'PAIEMENT EN ATTENTE'">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${reservation}//a[contains(text(),'Détails')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.351158" elapsed="0.000080"/>
+<status status="NOT RUN" start="2026-08-25T21:41:23.574545" elapsed="0.000400"/>
 </kw>
-<status status="NOT RUN" start="2026-08-15T14:53:38.351047" elapsed="0.000257"/>
+<status status="NOT RUN" start="2026-08-25T21:41:23.573951" elapsed="0.001188"/>
 </branch>
 <branch type="ELSE IF" condition="$statut == &quot;À L'ÉTUDE&quot;">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${reservation}//a[contains(text(),'Détails')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.351455" elapsed="0.000078"/>
+<status status="NOT RUN" start="2026-08-25T21:41:23.575553" elapsed="0.000130"/>
 </kw>
-<status status="NOT RUN" start="2026-08-15T14:53:38.351346" elapsed="0.000252"/>
+<status status="NOT RUN" start="2026-08-25T21:41:23.575218" elapsed="0.000564"/>
 </branch>
-<status status="NOT RUN" start="2026-08-15T14:53:38.350351" elapsed="0.001289"/>
+<status status="PASS" start="2026-08-25T21:41:22.352439" elapsed="1.223426"/>
 </if>
-<arg>${STATUT RESERVATION AVANT ANNULATION DISPO}</arg>
-<status status="FAIL" start="2026-08-15T14:53:28.284742" elapsed="10.066978">Element 'xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="DISPONIBLE"]])[1]' not visible after 10 seconds.</status>
+<arg>${STATUT ANNONCE}</arg>
+<status status="PASS" start="2026-08-25T21:41:22.288307" elapsed="1.287649"/>
 </kw>
-<msg time="2026-08-15T14:53:38.351882" level="INFO">${reservation_trouvee} = False</msg>
-<var>${reservation_trouvee}</var>
-<arg>Ouvrir une réservation avec le statut</arg>
-<arg>${STATUT RESERVATION AVANT ANNULATION DISPO}</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-08-15T14:53:28.283982" elapsed="10.068072"/>
+<kw name="Verifier les informations avant confirmation" owner="commun_US-08">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:23.602738" level="INFO">${date_debut} = 2026-09-26</msg>
+<var>${date_debut}</var>
+<arg>xpath=//li[contains(normalize-space(.),'Arrivée:')]/strong</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.576780" elapsed="0.026210"/>
 </kw>
-<if>
-<branch type="IF" condition="not ${reservation_trouvee}">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:23.614129" level="INFO">${date_fin} = 2026-09-27</msg>
+<var>${date_fin}</var>
+<arg>xpath=//li[contains(normalize-space(.),'Départ:')]/strong</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.603213" elapsed="0.011548"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-08-25T21:41:23.628470" level="INFO">${date_debut_epoch} = 1790373600.0</msg>
+<var>${date_debut_epoch}</var>
+<arg>${date_debut}</arg>
+<arg>epoch</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.615467" elapsed="0.013283"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-08-25T21:41:23.629714" level="INFO">${date_fin_epoch} = 1790460000.0</msg>
+<var>${date_fin_epoch}</var>
+<arg>${date_fin}</arg>
+<arg>epoch</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.629007" elapsed="0.000917"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-25T21:41:23.631507" level="INFO">${nb_nuits_attendu} = 1</msg>
+<var>${nb_nuits_attendu}</var>
+<arg>int((${date_fin_epoch} - ${date_debut_epoch}) / 86400)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.630296" elapsed="0.001840"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:23.645377" level="INFO">${texte_nuits} = nuit: 1</msg>
+<var>${texte_nuits}</var>
+<arg>xpath=//li[contains(normalize-space(.),'nuit')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.632651" elapsed="0.013032"/>
+</kw>
+<kw name="Replace String Using Regexp" owner="String">
+<msg time="2026-08-25T21:41:23.646790" level="INFO">${nb_nuits_affiche} = 1</msg>
+<var>${nb_nuits_affiche}</var>
+<arg>${texte_nuits}</arg>
+<arg>.*?([0-9]+).*</arg>
+<arg>\\1</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.645997" elapsed="0.001106"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2026-08-25T21:41:23.649215" level="INFO">${nb_nuits_affiche} = 1</msg>
+<var>${nb_nuits_affiche}</var>
+<arg>${nb_nuits_affiche}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.647461" elapsed="0.003064"/>
+</kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-08-15T14:53:38.354160" level="INFO">Aucune réservation DISPONIBLE trouvée. Recherche d'une réservation À L'ÉTUDE.</msg>
-<arg>Aucune réservation DISPONIBLE trouvée. Recherche d'une réservation À L'ÉTUDE.</arg>
+<msg time="2026-08-25T21:41:23.651910" level="INFO">Nombre de nuits affiché : 1</msg>
+<arg>Nombre de nuits affiché : ${nb_nuits_affiche}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-15T14:53:38.353322" elapsed="0.001462"/>
+<status status="PASS" start="2026-08-25T21:41:23.651067" elapsed="0.001351"/>
 </kw>
-<kw name="Ouvrir une réservation avec le statut" owner="commun_US-08">
-<kw name="Trouver une réservation avec le statut" owner="commun_US-08">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-08-15T14:53:38.356617" level="INFO">${reservation} = xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="À L'ÉTUDE"]])[1]</msg>
-<var>${reservation}</var>
-<arg>xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="${statut}"]])[1]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-08-15T14:53:38.356138" elapsed="0.000665"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${reservation}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:38.356965" elapsed="0.010468"/>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${nb_nuits_affiche}</arg>
+<arg>${nb_nuits_attendu}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.652717" elapsed="0.000822"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-08-15T14:53:38.368256" level="INFO">La réservation avec le statut À L'ÉTUDE a été trouvée : xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="À L'ÉTUDE"]])[1]</msg>
-<arg>La réservation avec le statut ${statut} a été trouvée : ${reservation}</arg>
+<msg time="2026-08-25T21:41:23.654593" level="INFO">Nombre de nuits affiché : 1</msg>
+<arg>Nombre de nuits affiché : ${nb_nuits_affiche}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-15T14:53:38.367817" elapsed="0.000614"/>
+<status status="PASS" start="2026-08-25T21:41:23.653844" elapsed="0.001032"/>
 </kw>
-<return>
-<value>${reservation}</value>
-<status status="PASS" start="2026-08-15T14:53:38.368527" elapsed="0.000344"/>
-</return>
-<msg time="2026-08-15T14:53:38.369037" level="INFO">${reservation} = xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="À L'ÉTUDE"]])[1]</msg>
-<var>${reservation}</var>
-<arg>${statut}</arg>
-<status status="PASS" start="2026-08-15T14:53:38.355667" elapsed="0.013494"/>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${nb_nuits_affiche}</arg>
+<arg>${nb_nuits_attendu}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.655098" elapsed="0.001485"/>
 </kw>
-<if>
-<branch type="IF" condition="$statut == 'NOUVEAU'">
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${reservation}//a[normalize-space(.)='Confirmer']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.369783" elapsed="0.000431"/>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:23.670353" level="INFO">${ligne_prix} = 240€ x 1 nuit
+240.00€</msg>
+<var>${ligne_prix}</var>
+<arg>xpath=(//div[@class='payment-list']//li[contains(.,'€ x')])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.657255" elapsed="0.013352"/>
 </kw>
-<status status="NOT RUN" start="2026-08-15T14:53:38.369298" elapsed="0.001101"/>
-</branch>
-<branch type="ELSE IF" condition="$statut == 'DISPONIBLE'">
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${reservation}//a[contains(text(),'Payez maintenant')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.371063" elapsed="0.000221"/>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-25T21:41:23.671628" level="INFO">Length is 21.</msg>
+<arg>${ligne_prix}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.670843" elapsed="0.001185"/>
 </kw>
-<status status="NOT RUN" start="2026-08-15T14:53:38.370464" elapsed="0.000932"/>
-</branch>
-<branch type="ELSE IF" condition="$statut == 'PAIEMENT EN ATTENTE'">
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${reservation}//a[contains(text(),'Détails')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-08-15T14:53:38.371814" elapsed="0.000102"/>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:23.688655" level="INFO">${ligne_impots} = Impôts 20%
+52.00€</msg>
+<var>${ligne_impots}</var>
+<arg>xpath=(//div[@class='payment-list']//li[contains(.,'Impôts')])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.672315" elapsed="0.016821"/>
 </kw>
-<status status="NOT RUN" start="2026-08-15T14:53:38.371457" elapsed="0.000544"/>
-</branch>
-<branch type="ELSE IF" condition="$statut == &quot;À L'ÉTUDE&quot;">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:38.372547" level="INFO">Clicking element 'xpath=(//tbody/tr[td[@data-label='Statut']//span[normalize-space(.)="À L'ÉTUDE"]])[1]//a[contains(text(),'Détails')]'.</msg>
-<arg>${reservation}//a[contains(text(),'Détails')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:38.372269" elapsed="0.853141"/>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${ligne_impots}</arg>
+<arg>Impôts\\s+\\d+(\\.\\d+)?%</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.689684" elapsed="0.002901"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:38.372049" elapsed="0.853555"/>
-</branch>
-<status status="PASS" start="2026-08-15T14:53:38.369275" elapsed="0.856393"/>
-</if>
-<arg>${STATUT RESERVATION AVANT ANNULATION À L'ÉTUDE}</arg>
-<status status="PASS" start="2026-08-15T14:53:38.355155" elapsed="0.870580"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-25T21:41:23.693533" level="INFO">Succès les informations avant confirmation</msg>
+<arg>Succès les informations avant confirmation</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.692972" elapsed="0.001027"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:38.352634" elapsed="0.873195"/>
-</branch>
-<status status="PASS" start="2026-08-15T14:53:38.352568" elapsed="0.873308"/>
-</if>
+<status status="PASS" start="2026-08-25T21:41:23.576244" elapsed="0.117921"/>
+</kw>
+<status status="PASS" start="2026-08-25T21:41:22.287180" elapsed="1.407096"/>
+</kw>
+<arg>Verifier l'info de l'annonce avant payer</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-08-25T21:41:22.285847" elapsed="1.408513"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-25T21:41:23.695440" level="INFO">===== Fin de la vérification PP-34 =====</msg>
+<arg>===== Fin de la vérification PP-34 =====</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-25T21:41:23.694888" elapsed="0.000898"/>
+</kw>
+<kw name="Acces au paiement" owner="commun_US-08">
 <kw name="Récupérer l'ID de la réservation" owner="commun_US-08">
 <kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:39.249640" level="INFO">${reservation_id} = 8808</msg>
+<msg time="2026-08-25T21:41:23.705149" level="INFO">${reservation_id} = 8874</msg>
 <var>${reservation_id}</var>
 <arg>id=resrv_id</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.226642" elapsed="0.023378"/>
+<status status="PASS" start="2026-08-25T21:41:23.697243" elapsed="0.008249"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-08-15T14:53:39.250769" level="INFO">ID de la réservation : 8808</msg>
+<msg time="2026-08-25T21:41:23.707213" level="INFO">ID de la réservation : 8874</msg>
 <arg>ID de la réservation : ${reservation_id}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.250273" elapsed="0.000821"/>
+<status status="PASS" start="2026-08-25T21:41:23.705873" elapsed="0.002438"/>
 </kw>
 <return>
 <value>${reservation_id}</value>
-<status status="PASS" start="2026-08-15T14:53:39.251255" elapsed="0.000274"/>
+<status status="PASS" start="2026-08-25T21:41:23.708605" elapsed="0.000359"/>
 </return>
-<msg time="2026-08-15T14:53:39.251893" level="INFO">${reservation_id} = 8808</msg>
+<msg time="2026-08-25T21:41:23.709376" level="INFO">${reservation_id} = 8874</msg>
 <var>${reservation_id}</var>
-<status status="PASS" start="2026-08-15T14:53:39.226186" elapsed="0.026118"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-08-15T14:53:39.253578" level="INFO">Réservation à annuler : 8808</msg>
-<arg>Réservation à annuler : ${reservation_id}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.252883" elapsed="0.001332"/>
-</kw>
-<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
-<kw name="Annuler la réservation">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${BUTTON ANNULER}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.256136" elapsed="0.010845"/>
+<status status="PASS" start="2026-08-25T21:41:23.696811" elapsed="0.013215"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:39.267514" level="INFO">Clicking element 'xpath=(//button[@id='cancel-reservation-btn'])[2]'.</msg>
-<arg>${BUTTON ANNULER}</arg>
+<msg time="2026-08-25T21:41:23.711362" level="INFO">Clicking element 'css=.btn-success:nth-child(2)'.</msg>
+<arg>css=.btn-success:nth-child(2)</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.267201" elapsed="0.068056"/>
+<status status="PASS" start="2026-08-25T21:41:23.710561" elapsed="0.983691"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//textarea[@id='reason']</arg>
+<status status="PASS" start="2026-08-25T21:41:23.696308" elapsed="0.998198"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Verifier les informations bancaires de l'hôte" owner="commun_US-08">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>information de paiement</arg>
 <arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.335774" elapsed="0.225369"/>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.695854" elapsed="0.023591"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:39.561817" level="INFO">Typing text 'Je ne peux plus venir' into text field 'xpath=//textarea[@id='reason']'.</msg>
-<arg>xpath=//textarea[@id='reason']</arg>
-<arg>${RAISON ANNULATION}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.561372" elapsed="0.029790"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.747197" level="INFO">Current page contains text 'Méthode'.</msg>
+<arg>Méthode</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.719766" elapsed="0.028350"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:39.591691" level="INFO">Clicking button 'xpath=//button[@id='cancelled']'.</msg>
-<arg>xpath=//button[@id='cancelled']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.591391" elapsed="0.187696"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.758648" level="INFO">Current page contains text 'Virement bancaire'.</msg>
+<arg>Virement bancaire</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.748549" elapsed="0.010415"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:39.255588" elapsed="0.523909"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.767267" level="INFO">Current page contains text 'Nom du bénéficiaire'.</msg>
+<arg>Nom du bénéficiaire</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.759197" elapsed="0.008345"/>
 </kw>
-<arg>Annuler la réservation</arg>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.778984" level="INFO">Current page contains text 'Adresse'.</msg>
+<arg>Adresse</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.767755" elapsed="0.011864"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.787940" level="INFO">Current page contains text 'Code IBAN'.</msg>
+<arg>Code IBAN</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.779918" elapsed="0.008378"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.796819" level="INFO">Current page contains text 'SWIFT'.</msg>
+<arg>SWIFT</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.788638" elapsed="0.008519"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.809189" level="INFO">Current page contains text 'Nom de banque'.</msg>
+<arg>Nom de banque</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.797874" elapsed="0.011582"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.818895" level="INFO">Current page contains text 'Adresse de la banque'.</msg>
+<arg>Adresse de la banque</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.809692" elapsed="0.009489"/>
+</kw>
+<status status="PASS" start="2026-08-25T21:41:24.695459" elapsed="0.123919"/>
+</kw>
+<arg>Verifier les informations bancaires de l'hôte</arg>
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.254755" elapsed="0.524955"/>
+<status status="PASS" start="2026-08-25T21:41:24.694826" elapsed="0.124663"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-08-15T14:53:39.780929" level="INFO">===== Fin de la vérification PP-36 =====</msg>
-<arg>===== Fin de la vérification PP-36 =====</arg>
+<msg time="2026-08-25T21:41:24.820833" level="INFO">===== Fin de la vérification PP-39 =====</msg>
+<arg>===== Fin de la vérification PP-39 =====</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.780380" elapsed="0.000774"/>
+<status status="PASS" start="2026-08-25T21:41:24.820174" elapsed="0.001039"/>
 </kw>
-<kw name="Aller dans Voyages">
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:39.782679" level="INFO">Sending key(s) ('HOME',) to page.</msg>
-<msg time="2026-08-15T14:53:39.782924" level="INFO">Pressing special key HOME to browser.</msg>
-<msg time="2026-08-15T14:53:39.783043" level="INFO">Releasing special key HOME.</msg>
-<arg>NONE</arg>
-<arg>HOME</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.782153" elapsed="0.009144"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:24.822069" level="INFO">Clicking element 'xpath=//a[contains(text(),'Retour')]'.</msg>
+<arg>xpath=//a[contains(text(),'Retour')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:24.821613" elapsed="0.957099"/>
+</kw>
+<kw name="Marquer comme payé" owner="commun_US-08">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON MARQUER COMME PAYE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:25.781526" elapsed="0.046982"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:25.829216" level="INFO">Clicking element 'css=.mark-as-paid'.</msg>
+<arg>${BUTTON MARQUER COMME PAYE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:25.828756" elapsed="0.085322"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${USER MENU}</arg>
-<arg>15s</arg>
+<arg>xpath=//div[contains(@class,'bootbox') and contains(@class,'in')]//button[@data-bb-handler='confirm']</arg>
+<arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.791515" elapsed="0.009523"/>
+<status status="PASS" start="2026-08-25T21:41:25.914579" elapsed="0.220986"/>
 </kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:39.801549" level="INFO">Opening url 'http://livraison3.testacademy.fr/index.php/reservations/'</msg>
-<arg>${URL}index.php/reservations/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-08-15T14:53:39.801252" elapsed="0.808257"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:26.136076" level="INFO">Clicking element 'xpath=//div[contains(@class,'bootbox') and contains(@class,'in')]//button[@data-bb-handler='confirm']'.</msg>
+<arg>xpath=//div[contains(@class,'bootbox') and contains(@class,'in')]//button[@data-bb-handler='confirm']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:26.135783" elapsed="0.071985"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class,'bootbox') and contains(@class,'in')]//button[@data-bb-handler='confirm']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:26.208361" elapsed="0.006180"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//aside[contains(@class,'dashboard-sidebar')]//span[contains(@class,'btn-success-outlined')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:26.214900" elapsed="1.672749"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-25T21:41:27.888802" level="INFO">La réservation a été marquée comme payée avec succès. Statut : RÉSERVÉ</msg>
+<arg>La réservation a été marquée comme payée avec succès. Statut : RÉSERVÉ</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-25T21:41:27.888075" elapsed="0.001473"/>
+</kw>
+<status status="PASS" start="2026-08-25T21:41:25.780096" elapsed="2.110012"/>
+</kw>
+<kw name="Récupérer l'ID de la réservation" owner="commun_US-08">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:27.904377" level="INFO">${reservation_id} = 8874</msg>
+<var>${reservation_id}</var>
+<arg>id=resrv_id</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:27.892178" elapsed="0.012624"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-25T21:41:27.905832" level="INFO">ID de la réservation : 8874</msg>
+<arg>ID de la réservation : ${reservation_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-25T21:41:27.905148" elapsed="0.001293"/>
+</kw>
+<return>
+<value>${reservation_id}</value>
+<status status="PASS" start="2026-08-25T21:41:27.906688" elapsed="0.000642"/>
+</return>
+<msg time="2026-08-25T21:41:27.907658" level="INFO">${reservation_id} = 8874</msg>
+<var>${reservation_id}</var>
+<status status="PASS" start="2026-08-25T21:41:27.891476" elapsed="0.017133"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-25T21:41:27.928064" level="INFO">Réservation testée : 8874</msg>
+<arg>Réservation testée : ${reservation_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-25T21:41:27.927068" elapsed="0.003804"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-25T21:41:27.935530" level="INFO">===== Fin de la vérification PP-35 =====</msg>
+<arg>===== Fin de la vérification PP-35 =====</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-25T21:41:27.933476" elapsed="0.003034"/>
+</kw>
+<kw name="Retourner au tableau réservations Voyageur" owner="commun_US-08">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:27.946945" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Voyages')])[3]'.</msg>
+<arg>${BUTTON VOYAGES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:27.943172" elapsed="0.949913"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=//tbody/tr</arg>
-<arg>15s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.609761" elapsed="0.018094"/>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:28.893343" elapsed="0.043382"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:39.781721" elapsed="0.846436"/>
+<status status="PASS" start="2026-08-25T21:41:27.942053" elapsed="0.994920"/>
+</kw>
+<kw name="Attendre le statut d'une réservation" owner="commun_US-08">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Vérifier le statut d'une réservation" owner="commun_US-08">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-25T21:41:28.942499" level="INFO">${reservation} = xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8874')]]</msg>
+<var>${reservation}</var>
+<arg>xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'${reservation_id}')]]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-25T21:41:28.941171" elapsed="0.002087"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${reservation}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:28.943700" elapsed="0.019054"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:28.977298" level="INFO">Element 'xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8874')]]/td[@data-label='Statut']' contains text 'RÉSERVÉ'.</msg>
+<arg>${reservation}/td[@data-label='Statut']</arg>
+<arg>${statut_attendu}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-08-25T21:41:28.963004" elapsed="0.015089"/>
+</kw>
+<arg>${reservation_id}</arg>
+<arg>${statut_attendu}</arg>
+<status status="PASS" start="2026-08-25T21:41:28.939700" elapsed="0.038627"/>
+</kw>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Vérifier le statut d'une réservation</arg>
+<arg>${reservation_id}</arg>
+<arg>${statut_attendu}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-08-25T21:41:28.938246" elapsed="0.040190"/>
+</kw>
+<arg>${reservation_id}</arg>
+<arg>${STATUT RESERVATION APRES PAIEMENT}</arg>
+<status status="PASS" start="2026-08-25T21:41:28.937479" elapsed="0.041077"/>
 </kw>
 <kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
 <kw name="Vérifier le statut d'une réservation" owner="commun_US-08">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-08-15T14:53:40.631108" level="INFO">${reservation} = xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8808')]]</msg>
+<msg time="2026-08-25T21:41:28.983303" level="INFO">${reservation} = xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8874')]]</msg>
 <var>${reservation}</var>
 <arg>xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'${reservation_id}')]]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.630523" elapsed="0.000841"/>
+<status status="PASS" start="2026-08-25T21:41:28.981753" elapsed="0.002119"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${reservation}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.631574" elapsed="0.025132"/>
+<status status="PASS" start="2026-08-25T21:41:28.984203" elapsed="0.020418"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:40.668455" level="INFO">Element 'xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8808')]]/td[@data-label='Statut']' contains text 'ANNULÉ'.</msg>
+<msg time="2026-08-25T21:41:29.020468" level="INFO">Element 'xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8874')]]/td[@data-label='Statut']' contains text 'RÉSERVÉ'.</msg>
 <arg>${reservation}/td[@data-label='Statut']</arg>
 <arg>${statut_attendu}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.656955" elapsed="0.012052"/>
+<status status="PASS" start="2026-08-25T21:41:29.004957" elapsed="0.015871"/>
 </kw>
 <arg>${reservation_id}</arg>
-<arg>${STATUT RESERVATION APRES ANNULATION}</arg>
-<status status="PASS" start="2026-08-15T14:53:40.629884" elapsed="0.039399"/>
+<arg>${STATUT RESERVATION APRES PAIEMENT}</arg>
+<status status="PASS" start="2026-08-25T21:41:28.980310" elapsed="0.040737"/>
 </kw>
 <arg>Vérifier le statut d'une réservation</arg>
 <arg>${reservation_id}</arg>
-<arg>${STATUT RESERVATION APRES ANNULATION}</arg>
+<arg>${STATUT RESERVATION APRES PAIEMENT}</arg>
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.628964" elapsed="0.040463"/>
+<status status="PASS" start="2026-08-25T21:41:28.979102" elapsed="0.042074"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-08-15T14:53:40.670629" level="INFO">===== Fin de la vérification PP-37 =====</msg>
-<arg>===== Fin de la vérification PP-37 =====</arg>
+<msg time="2026-08-25T21:41:29.022200" level="INFO">===== Fin de la vérification PP-44 =====</msg>
+<arg>===== Fin de la vérification PP-44 =====</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.669922" elapsed="0.001224"/>
+<status status="PASS" start="2026-08-25T21:41:29.021706" elapsed="0.001188"/>
 </kw>
-<kw name="Se deconnecter depuis Voyages">
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:40.679678" level="INFO">${logout_url} = http://livraison3.testacademy.fr/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Flivraison3.testacademy.fr%2F&amp;_wpnonce=09b50fd924</msg>
-<var>${logout_url}</var>
-<arg>xpath=//div[contains(@class,'account-dropdown')]//a[contains(@href,'action=logout')]</arg>
-<arg>href</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.672818" elapsed="0.007199"/>
+<kw name="Se deconnecter" owner="commun_US-08">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:29.025544" level="INFO">Sending key(s) ('HOME',) to page.</msg>
+<msg time="2026-08-25T21:41:29.025885" level="INFO">Pressing special key HOME to browser.</msg>
+<msg time="2026-08-25T21:41:29.026163" level="INFO">Releasing special key HOME.</msg>
+<arg>NONE</arg>
+<arg>HOME</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-08-25T21:41:29.024820" elapsed="0.020927"/>
 </kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:40.680740" level="INFO">Opening url 'http://livraison3.testacademy.fr/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Flivraison3.testacademy.fr%2F&amp;_wpnonce=09b50fd924'</msg>
-<arg>${logout_url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-08-15T14:53:40.680272" elapsed="1.294553"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON USER MENU}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:29.046110" elapsed="0.014074"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:29.061116" level="INFO">Simulating Mouse Over on element 'css=.account-loggedin'.</msg>
+<arg>${BUTTON USER MENU}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:29.060459" elapsed="0.268170"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Cliquer sur Se déconnecter" owner="commun_US-08">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:29.330259" level="INFO">Simulating Mouse Over on element 'css=.account-loggedin'.</msg>
+<arg>${BUTTON USER MENU}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:29.330039" elapsed="0.273051"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON SE DECONNECTER}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:29.603312" elapsed="0.010110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-25T21:41:29.614429" level="INFO">Clicking element 'xpath=//div[contains(@class,'account-dropdown')]//a[contains(normalize-space(.),'Se déconnecter')]'.</msg>
+<arg>${BUTTON SE DECONNECTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-25T21:41:29.613810" elapsed="1.323822"/>
+</kw>
+<status status="PASS" start="2026-08-25T21:41:29.329758" elapsed="1.608078"/>
+</kw>
+<arg>3x</arg>
+<arg>1s</arg>
+<arg>Cliquer sur Se déconnecter</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-08-25T21:41:29.329020" elapsed="1.608909"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LIEN SE CONNECTER}</arg>
-<arg>10s</arg>
+<arg>15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:41.975063" elapsed="0.025500"/>
+<status status="PASS" start="2026-08-25T21:41:30.938101" elapsed="0.039438"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:40.672106" elapsed="1.328626"/>
+<status status="PASS" start="2026-08-25T21:41:29.023974" elapsed="1.953827"/>
 </kw>
 <kw name="Se connecter" owner="commun_US-07">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:42.001749" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
+<msg time="2026-08-25T21:41:30.979449" level="INFO">Clicking element 'xpath=//a[contains(text(),'Se connecter')]'.</msg>
 <arg>${LIEN SE CONNECTER}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.001510" elapsed="0.076905"/>
+<status status="PASS" start="2026-08-25T21:41:30.979174" elapsed="0.094293"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CHAMP NOM UTILISATEUR}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.078871" elapsed="0.228647"/>
+<status status="PASS" start="2026-08-25T21:41:31.074206" elapsed="0.233083"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${CHAMP NOM UTILISATEUR}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.307759" elapsed="0.007270"/>
+<status status="PASS" start="2026-08-25T21:41:31.307666" elapsed="0.006083"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${CHAMP MOT DE PASSE}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.315600" elapsed="0.007915"/>
+<status status="PASS" start="2026-08-25T21:41:31.314102" elapsed="0.006641"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:42.324324" level="INFO">Typing text 'Sera' into text field 'name=username'.</msg>
+<msg time="2026-08-25T21:41:31.321327" level="INFO">Typing text 'Sera' into text field 'name=username'.</msg>
 <arg>${CHAMP NOM UTILISATEUR}</arg>
 <arg>${user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.323891" elapsed="0.021197"/>
+<status status="PASS" start="2026-08-25T21:41:31.320984" elapsed="0.026714"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:42.345988" level="INFO">Typing text 'robot1' into text field 'name=password'.</msg>
+<msg time="2026-08-25T21:41:31.349055" level="INFO">Typing text 'robot1' into text field 'name=password'.</msg>
 <arg>${CHAMP MOT DE PASSE}</arg>
 <arg>${pass}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.345376" elapsed="0.021812"/>
+<status status="PASS" start="2026-08-25T21:41:31.348208" elapsed="0.028236"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:42.367717" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
+<msg time="2026-08-25T21:41:31.377044" level="INFO">Clicking button 'css=.homey_login_button'.</msg>
 <arg>${BOUTON VALIDER}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.367409" elapsed="0.083037"/>
+<status status="PASS" start="2026-08-25T21:41:31.376688" elapsed="0.085764"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:42.452831" level="INFO">Page title is 'Accueil - Livraison 3'.</msg>
+<msg time="2026-08-25T21:41:31.465188" level="INFO">Page title is 'Accueil - Livraison 3'.</msg>
 <arg>${TITRE TABLEAU DE BORD VOYAGEUR}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.450806" elapsed="0.002227"/>
+<status status="PASS" start="2026-08-25T21:41:31.462749" elapsed="0.002970"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>${MODAL LOGIN}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:42.453244" elapsed="1.049103"/>
+<status status="PASS" start="2026-08-25T21:41:31.466007" elapsed="0.870345"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${BUTTON ACCUEIL}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-08-15T14:53:43.502569" elapsed="0.004117"/>
+<status status="PASS" start="2026-08-25T21:41:32.336644" elapsed="0.249951"/>
 </kw>
 <arg>${HOTE_EMAIL}</arg>
 <arg>${HOTE_PASSWORD}</arg>
-<status status="PASS" start="2026-08-15T14:53:42.001060" elapsed="1.505796"/>
+<status status="PASS" start="2026-08-25T21:41:30.978576" elapsed="1.608206"/>
 </kw>
+<kw name="Retourner au tableau réservations Hôte" owner="commun_US-08">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:43.507503" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Réservations')])[3]'.</msg>
+<msg time="2026-08-25T21:41:32.587972" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Réservations')])[3]'.</msg>
 <arg>${BUTTON RESERVATIONS}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-08-15T14:53:43.507141" elapsed="0.796636"/>
+<status status="PASS" start="2026-08-25T21:41:32.587652" elapsed="1.098089"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//tbody/tr</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-25T21:41:33.686064" elapsed="0.051683"/>
+</kw>
+<status status="PASS" start="2026-08-25T21:41:32.587172" elapsed="1.150762"/>
 </kw>
 <kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
 <kw name="Vérifier le statut d'une réservation" owner="commun_US-08">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-08-15T14:53:44.306680" level="INFO">${reservation} = xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8808')]]</msg>
+<msg time="2026-08-25T21:41:33.740525" level="INFO">${reservation} = xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8874')]]</msg>
 <var>${reservation}</var>
 <arg>xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'${reservation_id}')]]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-08-15T14:53:44.306107" elapsed="0.000807"/>
+<status status="PASS" start="2026-08-25T21:41:33.739707" elapsed="0.001097"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${reservation}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-08-15T14:53:44.307093" elapsed="0.026792"/>
+<status status="PASS" start="2026-08-25T21:41:33.741036" elapsed="0.014840"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2026-08-15T14:53:44.345603" level="INFO">Element 'xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8808')]]/td[@data-label='Statut']' contains text 'ANNULÉ'.</msg>
+<msg time="2026-08-25T21:41:33.769947" level="INFO">Element 'xpath=//tbody/tr[td[@data-label='ID'][contains(normalize-space(.),'8874')]]/td[@data-label='Statut']' contains text 'RÉSERVÉ'.</msg>
 <arg>${reservation}/td[@data-label='Statut']</arg>
 <arg>${statut_attendu}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2026-08-15T14:53:44.334105" elapsed="0.012008"/>
+<status status="PASS" start="2026-08-25T21:41:33.756422" elapsed="0.013836"/>
 </kw>
 <arg>${reservation_id}</arg>
-<arg>${STATUT RESERVATION APRES ANNULATION}</arg>
-<status status="PASS" start="2026-08-15T14:53:44.305375" elapsed="0.041025"/>
+<arg>${STATUT RESERVATION APRES PAIEMENT}</arg>
+<status status="PASS" start="2026-08-25T21:41:33.738787" elapsed="0.031635"/>
 </kw>
 <arg>Vérifier le statut d'une réservation</arg>
 <arg>${reservation_id}</arg>
-<arg>${STATUT RESERVATION APRES ANNULATION}</arg>
+<arg>${STATUT RESERVATION APRES PAIEMENT}</arg>
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<status status="PASS" start="2026-08-15T14:53:44.304473" elapsed="0.042609"/>
+<status status="PASS" start="2026-08-25T21:41:33.738231" elapsed="0.032289"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-08-15T14:53:44.348512" level="INFO">===== Fin de la vérification PP-38 =====</msg>
-<arg>===== Fin de la vérification PP-38 =====</arg>
+<msg time="2026-08-25T21:41:33.771461" level="INFO">===== Fin de la vérification PP-43 =====</msg>
+<arg>===== Fin de la vérification PP-43 =====</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-08-15T14:53:44.347991" elapsed="0.000878"/>
+<status status="PASS" start="2026-08-25T21:41:33.770926" elapsed="0.000912"/>
 </kw>
 <kw name="Fermer l'application8" owner="commun_US-08" type="TEARDOWN">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-08-15T14:53:44.350017" elapsed="2.675002"/>
+<status status="PASS" start="2026-08-25T21:41:33.773841" elapsed="2.855045"/>
 </kw>
-<status status="PASS" start="2026-08-15T14:53:44.349460" elapsed="2.675780"/>
+<status status="PASS" start="2026-08-25T21:41:33.772980" elapsed="2.856102"/>
 </kw>
-<doc>PP-36 / PP-37 / PP-38 - Le voyageur annule une réservation DISPONIBLE. Le statut devient ANNULÉ côté voyageur et côté hôte.</doc>
-<tag>PP-36</tag>
-<tag>PP-37</tag>
-<tag>PP-38</tag>
+<doc>La page de paiement est affichée avec le nombre de nuits, le prix par nuit et le taux d'imposition.</doc>
+<tag>PP-34</tag>
+<tag>PP-35</tag>
+<tag>PP-39</tag>
+<tag>PP-43</tag>
+<tag>PP-44</tag>
 <tag>US-08</tag>
-<status status="PASS" start="2026-08-15T14:53:17.777977" elapsed="29.247563"/>
+<status status="PASS" start="2026-08-25T21:41:08.700430" elapsed="27.928856"/>
 </test>
-<status status="PASS" start="2026-08-15T14:53:17.548937" elapsed="29.483779"/>
+<status status="PASS" start="2026-08-25T21:41:08.380015" elapsed="28.255582"/>
 </suite>
-<status status="PASS" start="2026-08-15T14:53:17.538835" elapsed="29.498470"/>
+<status status="PASS" start="2026-08-25T21:41:08.370825" elapsed="28.270098"/>
 </suite>
-<status status="PASS" start="2026-08-15T14:53:17.533662" elapsed="29.507874"/>
+<status status="PASS" start="2026-08-25T21:41:08.360806" elapsed="28.298886"/>
 </suite>
-<status status="PASS" start="2026-08-15T14:53:17.524576" elapsed="29.521190"/>
+<status status="PASS" start="2026-08-25T21:41:08.354997" elapsed="28.331992"/>
 </suite>
-<status status="PASS" start="2026-08-15T14:53:17.480387" elapsed="29.569517"/>
+<status status="PASS" start="2026-08-25T21:41:08.268389" elapsed="28.431581"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">PP-36</stat>
-<stat pass="1" fail="0" skip="0">PP-37</stat>
-<stat pass="1" fail="0" skip="0">PP-38</stat>
+<stat pass="1" fail="0" skip="0">PP-34</stat>
+<stat pass="1" fail="0" skip="0">PP-35</stat>
+<stat pass="1" fail="0" skip="0">PP-39</stat>
+<stat pass="1" fail="0" skip="0">PP-43</stat>
+<stat pass="1" fail="0" skip="0">PP-44</stat>
 <stat pass="1" fail="0" skip="0">US-08</stat>
 </tag>
 <suite>
@@ -613,7 +810,7 @@
 <stat name="Auto Test" id="s1-s1" pass="1" fail="0" skip="0">PFF.Auto Test</stat>
 <stat name="IHM" id="s1-s1-s1" pass="1" fail="0" skip="0">PFF.Auto Test.IHM</stat>
 <stat name="US-08" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">PFF.Auto Test.IHM.US-08</stat>
-<stat name="6 Voyageur Annule Reservation" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">PFF.Auto Test.IHM.US-08.6 Voyageur Annule Reservation</stat>
+<stat name="5 Voyageur Paye Reservation" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">PFF.Auto Test.IHM.US-08.5 Voyageur Paye Reservation</stat>
 </suite>
 </statistics>
 <errors>

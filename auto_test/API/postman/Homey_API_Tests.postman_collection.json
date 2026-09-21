@@ -1,0 +1,486 @@
+{
+  "info": {
+    "_postman_id": "fd9f75bc-2314-4ecd-9a47-d12bb4f40596",
+    "name": "HOMEY",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35370108"
+  },
+  "item": [
+    {
+      "name": "API-01_successful_add_reservation",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"La réponse présente une structure JSON valide\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json).to.have.property(\"success\");\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.success).to.be.a(\"boolean\");\n    pm.expect(json.message).to.be.a(\"string\");\n});\n\npm.test(\"Demande de réservation envoyée avec succès\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json.success).to.eql(true);\n    pm.expect(json.message).to.include(\n    \"Demande de réservation envoyée\"\n    );\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "homey_add_reservation"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-10-10"
+            },
+            {
+              "key": "check_out_date",
+              "value": "2026-10-11"
+            },
+            {
+              "key": "guests",
+              "value": "2"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            },
+            {
+              "key": "guest_message",
+              "value": " "
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API-02_unavailable_dates_add_reservation",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"La réponse présente une structure JSON valide\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json).to.have.property(\"success\");\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.success).to.be.a(\"boolean\");\n    pm.expect(json.message).to.be.a(\"string\");\n});\n\npm.test(\"Demande de réservation non envoyée — dates indisponibles\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json.success).to.eql(false);\n    pm.expect(json.message).to.include(\n    \"Vos dates ne sont pas disponibles\"\n    );\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "homey_add_reservation"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-10-10"
+            },
+            {
+              "key": "check_out_date",
+              "value": "2026-10-11"
+            },
+            {
+              "key": "guests",
+              "value": "2"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            },
+            {
+              "key": "guest_message",
+              "value": " "
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API-03_invalid_range_check_booking_availability_on_date_change",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"La réponse présente une structure JSON valide\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json).to.have.property(\"success\");\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.success).to.be.a(\"boolean\");\n    pm.expect(json.message).to.be.a(\"string\");\n});\n\npm.test(\"Demande de réservation non envoyée — dates non correcte\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json.success).to.eql(false);\n    pm.expect(json.message).to.include(\n    \"La date de d\\u00e9part doit \\u00eatre sup\\u00e9rieure \\u00e0 la date d&#039;arriv\\u00e9e\"\n    );\n});\n\n\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "check_booking_availability_on_date_change"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-11-22"
+            },
+            {
+              "key": "check_out_date",
+              "value": "2026-11-21"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API-04_invalid_range_check_booking_availability_on_date_change",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"La réponse présente une structure JSON valide\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json).to.have.property(\"success\");\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.success).to.be.a(\"boolean\");\n    pm.expect(json.message).to.be.a(\"string\");\n});\n\npm.test(\"Demande de réservation non envoyée — dates non correcte\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json.success).to.eql(false);\n    pm.expect(json.message).to.include(\n    \"La date de d\\u00e9part doit \\u00eatre sup\\u00e9rieure \\u00e0 la date d&#039;arriv\\u00e9e\"\n    );\n});\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "check_booking_availability_on_date_change"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-10-10"
+            },
+            {
+              "key": "check_out_date",
+              "value": "2026-10-10"
+            },
+            {
+              "key": "guests",
+              "value": "2"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            },
+            {
+              "key": "guest_message",
+              "value": " "
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API-05_calculate_booking_cost",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\n\npm.test(\"La réponse est un fragment HTML\", () => {\n    pm.expect(pm.response.headers.get(\"Content-Type\"))\n        .to.match(/text\\/html/i);\n\n    pm.expect(pm.response.text())\n        .to.match(/<div/i);\n});\n\npm.test(\"La page contient les informations de paiement\", () => {\n    const html = pm.response.text();\n\n    pm.expect(html).to.include(\"Total\");\n    pm.expect(html).to.include(\"Comprend les taxes et les frais\");\n    pm.expect(html).to.include(\"Paiement dû\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "homey_calculate_booking_cost"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-10-21"
+            },
+            {
+              "key": "check_out_date",
+              "value": "2026-10-24"
+            },
+            {
+              "key": "guests",
+              "value": "3"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API-06_invalid_guests_add_reservation",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"La réponse présente une structure JSON valide\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json).to.have.property(\"success\");\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.success).to.be.a(\"boolean\");\n    pm.expect(json.message).to.be.a(\"string\");\n});\n\npm.test(\"Demande de réservation non envoyée \", () => {\n    const json = pm.response.json();\n\n    pm.expect(json.success).to.eql(false);\n    pm.expect(json.message).to.include(\n    \"Veuillez choisir des voyageurs\"\n    );\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "homey_add_reservation"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-10-13"
+            },
+            {
+              "key": "check_out_date",
+              "value": "2026-10-15"
+            },
+            {
+              "key": "guests",
+              "value": "0"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            },
+            {
+              "key": "guest_message",
+              "value": " "
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API-07_missing_check_out_add_reservation",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"La réponse présente une structure JSON valide\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json).to.have.property(\"success\");\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.success).to.be.a(\"boolean\");\n    pm.expect(json.message).to.be.a(\"string\");\n});\n\npm.test(\"Demande de réservation non envoyée\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json.success).to.eql(true);\n    pm.expect(json.message).to.include(\n    \"Vos dates ne sont pas disponibles\"\n    );\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "homey_add_reservation"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-10-10"
+            },
+            {
+              "key": "check_out_date",
+              "value": ""
+            },
+            {
+              "key": "guests",
+              "value": "2"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            },
+            {
+              "key": "guest_message",
+              "value": " "
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API-08_invalid listing_add_reservation",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"La réponse présente une structure JSON valide\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json).to.have.property(\"success\");\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.success).to.be.a(\"boolean\");\n    pm.expect(json.message).to.be.a(\"string\");\n});\n\npm.test(\"Demande de réservation non envoyée\", () => {\n    const json = pm.response.json();\n\n    pm.expect(json.success).to.eql(true);\n    pm.expect(json.message).to.include(\n    \"Vos dates ne sont pas disponibles\"\n    );\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "action",
+              "value": "homey_add_reservation"
+            },
+            {
+              "key": "check_in_date",
+              "value": "2026-10-10"
+            },
+            {
+              "key": "check_out_date",
+              "value": ""
+            },
+            {
+              "key": "guests",
+              "value": "2"
+            },
+            {
+              "key": "listing_id",
+              "value": "8260"
+            },
+            {
+              "key": "guest_message",
+              "value": " "
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://livraison3.testacademy.fr/wp-admin/admin-ajax.php",
+          "protocol": "http",
+          "host": [
+            "livraison3",
+            "testacademy",
+            "fr"
+          ],
+          "path": [
+            "wp-admin",
+            "admin-ajax.php"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
