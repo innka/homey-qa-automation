@@ -34,3 +34,17 @@ class ReservationAPI:
         # Send the availability check request
         response = self.client.post(data=availability_data)
         return response
+
+    def calculate_booking_cost(self, check_in_date, check_out_date, guests, listing_id):
+        # Build the payload for calculating the booking cost
+        cost_data = {
+            "action": "homey_calculate_booking_cost",
+            "check_in_date": check_in_date,
+            "check_out_date": check_out_date,
+            "guests": guests,
+            "listing_id": listing_id,
+        }
+
+        # Send the cost calculation request
+        response = self.client.post(data=cost_data)
+        return response

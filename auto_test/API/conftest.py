@@ -1,7 +1,10 @@
 # conftest.py
+import os
+
 import pytest
 import requests
 from re import search
+from datetime import date, timedelta
 
 from api.client import ApiClient
 from api.reservation import ReservationAPI
@@ -39,6 +42,19 @@ def validate_base_response():
 
     return _validate
 
+@pytest.fixture
+def future_booking_dates():
+    # Provide a pair of check-in and check-out dates in the future for testing
+    #build_number is used to ensure that the dates are always in the future, even if tests are run multiple times
+    #build_number = int(os.getenv("BUILD_NUMBER", "0"))
+
+    check_in = date.today() + timedelta(days=30)# + build_number)
+    check_out = check_in + timedelta(days=1)
+
+    return {
+        "check_in_date": check_in.isoformat(),
+        "check_out_date": check_out.isoformat(),
+    }
 
 @pytest.fixture
 def authenticated_session():
