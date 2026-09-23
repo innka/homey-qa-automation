@@ -138,5 +138,5 @@ def test_api_08_invalid_listing_id(reservation_api, validate_base_response,futur
 
     # API should reject the request because the listing is invalid
     assert response_data["success"] is False, response.text
-    assert "Vous devez etre connecte" in response_data["message"], response.text
+    assert "Listing not found" in response_data["message"], response.text
     #assert "Vos dates ne sont pas disponibles" in response_data["message"], response.text
